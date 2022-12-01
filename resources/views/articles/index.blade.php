@@ -2,6 +2,12 @@
 
 @section("content")
     <div class="container">
+        
+        @if(session('info'))
+            <div class="alert alert-info">
+                {{ session('info') }}
+            </div>
+        @endif
 
         {{ $articles->links() }}
 
@@ -14,7 +20,7 @@
                     </div>
                     <p class="card-text">{{ $article->body }}</p>
                     <a class="card-link"
-                        href="{{ url("/>articles/detail/$article->id") }} ">
+                        href="{{ url("/articles/detail/$article->id") }} ">
                         View Detail &raquo;
                     </a>
                 </div>
